@@ -3,17 +3,13 @@
 **Monvo — Everything ready**
 
 Monvo is a mobile app designed to help people stay organized during life’s most important moments.  
-With smart checklists for **travel, moving, weddings, and other events**, Monvo ensures you don’t forget anything — from planning to execution.
-
----
+With smart checklists for **travel, moving, weddings, and other events**, Monvo ensures you don’t forget anything, from planning to execution.
 
 ## 🚀 About the Project
 
 Monvo focuses on simplicity, speed, and real-life usefulness.  
 Users can choose a checklist template, customize it, track progress, and receive reminders.  
 The **Premium version includes AI-powered checklists**, generating personalized lists based on the user’s context.
-
----
 
 ## ✨ Features
 
@@ -26,8 +22,6 @@ The **Premium version includes AI-powered checklists**, generating personalized 
 - ☁️ Cloud backup and sync (Premium)
 - 🚫 Ad-free experience (Premium)
 
----
-
 ## 🧠 AI (Premium)
 
 Monvo Premium includes AI features that:
@@ -37,8 +31,6 @@ Monvo Premium includes AI features that:
 - Help users avoid forgetting essential items
 
 The goal is to reduce planning time and increase peace of mind.
-
----
 
 ## 🛠️ Tech Stack
 
@@ -58,16 +50,12 @@ This project is built with a modern and scalable mobile stack:
 - **Zustand** – State management
 - **React Navigation** – App navigation
 
----
-
 ## 📱 Platforms
 
 - iOS
 - Android
 
 Built with a single codebase using Expo.
-
----
 
 ## 📦 Installation
 
@@ -82,8 +70,6 @@ yarn ios          # Run on iOS
 yarn lint         # Run lint checks
 ```
 
----
-
 ## 🗺️ Roadmap
 
 - [ ] Collaborative checklists
@@ -91,8 +77,6 @@ yarn lint         # Run lint checks
 - [ ] More AI personalization
 - [ ] New checklist categories (Baby, Camping, Events)
 - [ ] Web version (future)
-
----
 
 ## 📄 License
 
