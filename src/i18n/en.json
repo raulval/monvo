@@ -1,0 +1,21 @@
+{
+  "onboarding": {
+    "screens": [
+      {
+        "headline": "Organize life's important moments",
+        "description": "Keep track of everything that matters with smart, personalized checklists"
+      },
+      {
+        "headline": "Travel, moving, weddings and more",
+        "description": "Pre-built templates for all your life events, ready to customize"
+      },
+      {
+        "headline": "Smart checklists with AI support",
+        "description": "Get intelligent suggestions and never forget what's important"
+      }
+    ],
+    "skip": "Skip",
+    "next": "Next",
+    "getStarted": "Get started"
+  }
+}

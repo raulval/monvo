@@ -1,0 +1,21 @@
+{
+  "onboarding": {
+    "screens": [
+      {
+        "headline": "Organiza los momentos importantes de la vida",
+        "description": "Controla todo lo que importa con listas inteligentes y personalizadas"
+      },
+      {
+        "headline": "Viajes, mudanzas, bodas y más",
+        "description": "Plantillas listas para todos los eventos de tu vida"
+      },
+      {
+        "headline": "Listas inteligentes con IA",
+        "description": "Recibe sugerencias inteligentes y no olvides nada importante"
+      }
+    ],
+    "skip": "Saltar",
+    "next": "Siguiente",
+    "getStarted": "Empezar"
+  }
+}

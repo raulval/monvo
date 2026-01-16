@@ -1,0 +1,21 @@
+{
+  "onboarding": {
+    "screens": [
+      {
+        "headline": "Organize os momentos importantes da vida",
+        "description": "Acompanhe tudo o que importa com checklists inteligentes e personalizados"
+      },
+      {
+        "headline": "Viagens, mudanças, casamentos e mais",
+        "description": "Modelos prontos para todos os eventos da sua vida, prontos para personalizar"
+      },
+      {
+        "headline": "Checklists inteligentes com IA",
+        "description": "Receba sugestões inteligentes e nunca esqueça o que é importante"
+      }
+    ],
+    "skip": "Pular",
+    "next": "Próximo",
+    "getStarted": "Começar"
+  }
+}
