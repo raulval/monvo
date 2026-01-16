@@ -1,7 +1,11 @@
 import "../global.css";
+import "react-native-reanimated";
+import "@/i18n";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 
-import { Slot } from "expo-router";
+SplashScreen.preventAutoHideAsync();
 
-export default function Layout() {
-  return <Slot />;
+export default function RootLayout() {
+  return <Stack screenOptions={{ headerShown: false }} />;
 }
