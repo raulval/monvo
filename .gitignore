@@ -7,6 +7,10 @@ node_modules/
 *.lock
 *.lockb
 
+# AI
+*.cursor
+*.qodo
+
 # Expo
 .expo/
 dist/
