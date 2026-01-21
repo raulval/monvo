@@ -68,7 +68,7 @@ export default function ChecklistDetailsScreen() {
 				showsVerticalScrollIndicator={false}
 				contentContainerStyle={{ paddingTop: 340, paddingBottom: 120 }}
 			>
-				<View className="px-6 pb-20">
+				<View className="px-6 pt-28">
 					{checklist.topics.map((topic: any) => (
 						<TopicAccordion
 							key={topic.id}
@@ -102,7 +102,7 @@ export default function ChecklistDetailsScreen() {
 					setSelectedTopic(null);
 					setManageTopicOpen(true);
 				}}
-				className="absolute bottom-10 right-6 w-16 h-16 bg-purple-600 rounded-full shadow-xl items-center justify-center active:scale-95 transition-all"
+				className="absolute bottom-10 right-6 w-16 h-16 bg-linear-to-br from-indigo-900 to-pink-600 rounded-full shadow-xl items-center justify-center active:scale-95 transition-all"
 			>
 				<Plus size={32} color="white" />
 			</Pressable>

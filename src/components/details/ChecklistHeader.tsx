@@ -3,7 +3,14 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 import { ArrowLeft, Edit2 } from "lucide-react-native";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
-import Animated, { useAnimatedStyle, interpolate, Extrapolation, SharedValue } from "react-native-reanimated";
+import Animated, {
+	useAnimatedStyle,
+	interpolate,
+	Extrapolation,
+	SharedValue,
+	withSpring,
+} from "react-native-reanimated";
+import { MotiView } from "moti";
 
 interface Props {
 	title: string;
@@ -28,7 +35,7 @@ export function ChecklistHeader({
 	const { t } = useTranslation();
 
 	const headerAnimatedStyle = useAnimatedStyle(() => {
-		const height = interpolate(scrollY.value, [0, 200], [320, 140], Extrapolation.CLAMP);
+		const height = interpolate(scrollY.value, [0, 200], [420, 140], Extrapolation.CLAMP);
 		const borderRadius = interpolate(scrollY.value, [0, 200], [40, 0], Extrapolation.CLAMP);
 
 		return {
@@ -79,13 +86,15 @@ export function ChecklistHeader({
 						<Text className="text-white font-bold text-lg" numberOfLines={1}>
 							{title}
 						</Text>
-						<Text className="text-white/70 text-xs font-bold uppercase">
-							{completedItems}/{totalItems}{" "}
-							{t("screens.home.create_sheet.items_count", { count: totalItems }).split(" ")[1]}
-						</Text>
-					</View>
-					<View className="items-end">
-						<Text className="text-white text-xl font-black">{progress}%</Text>
+						<View className="flex-row items-center justify-between gap-2">
+							<Text className="text-white/70 text-xs font-bold uppercase">
+								{completedItems}/{totalItems}{" "}
+								{t("screens.home.create_sheet.items_count", { count: totalItems }).split(" ")[1]}
+							</Text>
+							<View className="items-end">
+								<Text className="text-white text-xl font-black">{progress}%</Text>
+							</View>
+						</View>
 					</View>
 				</Animated.View>
 
@@ -113,9 +122,11 @@ export function ChecklistHeader({
 						</Text>
 						<Text className="text-white text-3xl font-black">{progress}%</Text>
 					</View>
-
 					<View className="h-3 bg-black/10 rounded-full overflow-hidden border border-white/10 mb-2">
-						<View className="h-full bg-white rounded-full shadow-sm" style={{ width: `${progress}%` }} />
+						<MotiView
+							animate={{ width: `${progress}%` }}
+							className="h-full bg-white rounded-full shadow-sm"
+						/>
 					</View>
 
 					<Text className="text-white/80 text-sm font-bold">
