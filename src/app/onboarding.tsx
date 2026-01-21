@@ -41,55 +41,63 @@ export default function Onboarding() {
 	const screen = screens[currentScreen];
 
 	return (
-		<View className="flex-1 bg-linear-to-b from-purple-50 via-pink-50 to-white">
+		<View className="flex-1 bg-white">
+			{/* Gradiente de fundo fixo */}
+			<View className="absolute inset-0 bg-linear-to-b from-purple-50 via-indigo-50/30 to-white" />
+
 			{/* Skip */}
 			{currentScreen < screens.length - 1 && (
-				<Pressable onPress={handleSkip} className="absolute right-5 top-12 z-10 px-4 py-2">
-					<Text className="text-sm font-medium text-gray-500">{t("onboarding.skip")}</Text>
+				<Pressable onPress={handleSkip} className="absolute right-5 top-12 z-20 px-4 py-2">
+					<Text className="text-sm font-semibold text-indigo-900/60">{t("onboarding.skip")}</Text>
 				</Pressable>
 			)}
 
 			{/* Content */}
-			<View className="flex-1 items-center justify-center px-6">
+			<View className="flex-1 px-6">
 				<Animated.View
 					key={currentScreen}
-					entering={FadeInRight.duration(300)}
-					exiting={FadeOutLeft.duration(300)}
-					className="items-center"
+					entering={FadeInRight.duration(200).springify().damping(40)}
+					exiting={FadeOutLeft.duration(200)}
+					className="flex-1 items-center justify-center"
 				>
-					{/* Illustration */}
-					<View className="mb-12">
+					{/* Illustration container with some breathing room */}
+					<View className="mb-16 min-h-[300px] items-center justify-center">
 						{screen.illustration === "checklist" && <ChecklistIllustration />}
 						{screen.illustration === "icons" && <IconsIllustration />}
 						{screen.illustration === "ai" && <AIIllustration />}
 					</View>
 
-					<Text className="mb-4 px-4 text-center text-3xl font-bold text-gray-900">
-						{t(`onboarding.screens.${currentScreen}.headline`)}
-					</Text>
+					<View className="w-full">
+						<Text className="mb-4 text-center text-3xl font-bold tracking-tight text-indigo-950">
+							{t(`onboarding.screens.${currentScreen}.headline`)}
+						</Text>
 
-					<Text className="px-4 text-center text-lg text-gray-600">
-						{t(`onboarding.screens.${currentScreen}.description`)}
-					</Text>
+						<Text className="px-4 text-center text-lg leading-6 text-gray-600">
+							{t(`onboarding.screens.${currentScreen}.description`)}
+						</Text>
+					</View>
 				</Animated.View>
 			</View>
 
-			{/* Bottom */}
+			{/* Bottom Controls */}
 			<View className="px-6 pb-12">
 				<Dots count={screens.length} activeIndex={currentScreen} onPress={setCurrentScreen} />
 
-				<View className="mt-6 flex-row items-center gap-3">
+				<View className="mt-8 flex-row items-center gap-4">
 					{currentScreen > 0 && (
-						<Pressable onPress={handleBack} className="rounded-xl border-2 border-gray-200 p-4">
-							<ChevronLeft size={24} />
+						<Pressable
+							onPress={handleBack}
+							className="h-14 w-14 items-center justify-center rounded-2xl border-2 border-indigo-100 bg-white shadow-sm active:bg-indigo-50"
+						>
+							<ChevronLeft size={24} color="#312e81" />
 						</Pressable>
 					)}
 
 					<Pressable
 						onPress={handleNext}
-						className="flex-1 flex-row items-center justify-center gap-2 rounded-xl bg-linear-to-r from-indigo-900 to-pink-600 py-4"
+						className="h-14 flex-1 flex-row items-center justify-center gap-2 rounded-2xl bg-linear-to-r from-indigo-900 to-pink-600 shadow-lg shadow-indigo-200 active:opacity-90"
 					>
-						<Text className="font-semibold text-white text-base">
+						<Text className="font-bold text-white text-lg">
 							{currentScreen === screens.length - 1 ? t("onboarding.getStarted") : t("onboarding.next")}
 						</Text>
 					</Pressable>
