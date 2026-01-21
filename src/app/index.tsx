@@ -1,30 +1,12 @@
 import { Redirect } from "expo-router";
-import { useEffect, useState } from "react";
-import * as SplashScreen from "expo-splash-screen";
+import { storage, StorageKeys } from "@/utils/storage";
 
 export default function App() {
-  const [isReady, setIsReady] = useState(false);
+	const hasFinishedOnboarding = storage.getBoolean(StorageKeys.HAS_FINISHED_ONBOARDING);
 
-  useEffect(() => {
-    async function initApp() {
-      try {
-        // carregar fontes, auth, storage, etc
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-      } finally {
-        setIsReady(true);
-      }
-    }
+	if (hasFinishedOnboarding) {
+		return <Redirect href="/home" />;
+	}
 
-    initApp();
-  }, []);
-
-  useEffect(() => {
-    if (isReady) {
-      SplashScreen.hideAsync();
-    }
-  }, [isReady]);
-
-  if (!isReady) return null;
-
-  return <Redirect href="/onboarding" />;
+	return <Redirect href="/onboarding" />;
 }

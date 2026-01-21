@@ -1,21 +1,122 @@
 {
-  "onboarding": {
-    "screens": [
-      {
-        "headline": "Organize os momentos importantes da vida",
-        "description": "Acompanhe tudo o que importa com checklists inteligentes e personalizados"
-      },
-      {
-        "headline": "Viagens, mudanças, casamentos e mais",
-        "description": "Modelos prontos para todos os eventos da sua vida, prontos para personalizar"
-      },
-      {
-        "headline": "Checklists inteligentes com IA",
-        "description": "Receba sugestões inteligentes e nunca esqueça o que é importante"
-      }
-    ],
-    "skip": "Pular",
-    "next": "Próximo",
-    "getStarted": "Começar"
-  }
+	"common": {
+		"archive": "Arquivar",
+		"delete": "Deletar",
+		"cancel": "Cancelar",
+		"confirm": "Confirmar",
+		"actions": "Ações",
+		"are_you_sure": "Tem certeza?",
+		"archive_confirm": "Deseja arquivar esta checklist?",
+		"delete_confirm": "Esta ação não pode ser desfeita. Deseja deletar permanentemente?"
+	},
+	"onboarding": {
+		"screens": [
+			{
+				"headline": "Organize os momentos importantes da vida",
+				"description": "Acompanhe tudo o que importa com checklists inteligentes e personalizados"
+			},
+			{
+				"headline": "Viagens, mudanças, casamentos e mais",
+				"description": "Modelos prontos para todos os eventos da sua vida, prontos para personalizar"
+			},
+			{
+				"headline": "Checklists inteligentes com IA",
+				"description": "Receba sugestões inteligentes e nunca esqueça o que é importante"
+			}
+		],
+		"skip": "Pular",
+		"next": "Próximo",
+		"getStarted": "Começar"
+	},
+	"tabs": {
+		"home": "Início",
+		"reminders": "Lembretes",
+		"history": "Histórico",
+		"settings": "Ajustes"
+	},
+	"screens": {
+		"home": {
+			"header": { "new_checklist": "Nova Checklist" },
+			"welcome": "Bem-vindo de volta! Vamos ficar organizados hoje.",
+			"empty": {
+				"title": "Nenhum checklist ativo",
+				"description": "Crie seu primeiro checklist para começar a organizar seus eventos",
+				"button": "Criar checklist"
+			},
+			"create_sheet": {
+				"title": "Nova checklist",
+				"scratch": {
+					"title": "Criar do zero",
+					"subtitle": "Comece com uma checklist vazia e personalize do seu jeito",
+					"name_placeholder": "Nome da checklist",
+					"description_placeholder": "Descrição (opcional)",
+					"create_button": "Criar Checklist"
+				},
+				"or_template": "Ou escolha um modelo",
+				"items_count": "{{count}} itens"
+			},
+			"templates": {
+				"travel": {
+					"title": "Viagem Internacional",
+					"desc": "Documentos, malas e preparativos essenciais",
+					"topics": {
+						"docs": "Documentos e Finanças",
+						"packing": "Mala de Mão",
+						"health": "Saúde e Higiene"
+					},
+					"items": {
+						"passport": "Passaporte e Visto",
+						"insurance": "Seguro Viagem",
+						"currency": "Câmbio/Dinheiro em espécie",
+						"charger": "Adaptador de tomada",
+						"meds": "Remédios básicos",
+						"ticket": "Passagens/Reservas impressas"
+					}
+				},
+				"moving": {
+					"title": "Mudança de Casa",
+					"desc": "Organize caixas, contratos e serviços",
+					"topics": {
+						"admin": "Administrativo",
+						"packing": "Embalagem",
+						"new_home": "Nova Residência"
+					},
+					"items": {
+						"address": "Alterar endereço (Bancos/Assinaturas)",
+						"utilities": "Desligar luz/água atual",
+						"boxes": "Comprar caixas e fitas",
+						"label": "Etiquetar caixas por cômodo",
+						"cleaning": "Agendar limpeza profissional",
+						"internet": "Instalar internet nova"
+					}
+				},
+				"wedding": {
+					"title": "Planejamento de Casamento",
+					"desc": "A contagem regressiva para o grande dia",
+					"topics": {
+						"legal": "Legal e Cerimônia",
+						"guests": "Convidados",
+						"vendors": "Fornecedores"
+					},
+					"items": {
+						"registry": "Cartório e Documentação",
+						"list": "Lista de convidados",
+						"save_date": "Enviar Save the Date",
+						"catering": "Degustação do Buffet",
+						"dress": "Prova do vestido/traje",
+						"photo": "Contratar Fotógrafo"
+					}
+				}
+			}
+		},
+		"details": {
+			"general_progress": "Progresso geral",
+			"items_count": "{{completed}} de {{total}} itens concluídos",
+			"add_topic": "Adicionar Tópico",
+			"add_item": "Adicionar item",
+			"edit_checklist": "Editar Checklist",
+			"manage_topic": "Gerenciar Tópico",
+			"manage_item": "Gerenciar Item"
+		}
+	}
 }

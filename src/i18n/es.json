@@ -1,21 +1,122 @@
 {
-  "onboarding": {
-    "screens": [
-      {
-        "headline": "Organiza los momentos importantes de la vida",
-        "description": "Controla todo lo que importa con listas inteligentes y personalizadas"
-      },
-      {
-        "headline": "Viajes, mudanzas, bodas y más",
-        "description": "Plantillas listas para todos los eventos de tu vida"
-      },
-      {
-        "headline": "Listas inteligentes con IA",
-        "description": "Recibe sugerencias inteligentes y no olvides nada importante"
-      }
-    ],
-    "skip": "Saltar",
-    "next": "Siguiente",
-    "getStarted": "Empezar"
-  }
+	"common": {
+		"archive": "Archivar",
+		"delete": "Eliminar",
+		"cancel": "Cancelar",
+		"confirm": "Confirmar",
+		"actions": "Acciones",
+		"are_you_sure": "¿Estás seguro?",
+		"archive_confirm": "¿Deseas archivar esta checklist?",
+		"delete_confirm": "Esta acción no se puede deshacer. ¿Deseas eliminar permanentemente?"
+	},
+	"onboarding": {
+		"screens": [
+			{
+				"headline": "Organiza los momentos importantes da vida",
+				"description": "Controla todo lo que importa con listas inteligentes y personalizadas"
+			},
+			{
+				"headline": "Viajes, mudanzas, bodas y más",
+				"description": "Plantillas listas para todos los eventos de tu vida"
+			},
+			{
+				"headline": "Listas inteligentes con IA",
+				"description": "Recibe sugerencias inteligentes y no olvides nada importante"
+			}
+		],
+		"skip": "Saltar",
+		"next": "Siguiente",
+		"getStarted": "Empezar"
+	},
+	"tabs": {
+		"home": "Inicio",
+		"reminders": "Recordatorios",
+		"history": "Historial",
+		"settings": "Ajustes"
+	},
+	"screens": {
+		"home": {
+			"header": { "new_checklist": "Nueva Checklist" },
+			"welcome": "¡Bienvenido de nuevo! Vamos a organizarnos hoy.",
+			"empty": {
+				"title": "No hay checklists activas",
+				"description": "Crea tu primera lista para empezar a organizar tus eventos",
+				"button": "Crear checklist"
+			},
+			"create_sheet": {
+				"title": "Nueva lista de control",
+				"scratch": {
+					"title": "Crear desde cero",
+					"subtitle": "Comienza con uma lista vacía y personalízala a tu manera",
+					"name_placeholder": "Nombre de la lista",
+					"description_placeholder": "Descripción (opcional)",
+					"create_button": "Crear Checklist"
+				},
+				"or_template": "O elige una plantilla",
+				"items_count": "{{count}} elementos"
+			},
+			"templates": {
+				"travel": {
+					"title": "Viaje Internacional",
+					"desc": "Documentos, maletas y preparativos esenciales",
+					"topics": {
+						"docs": "Documentos y Finanzas",
+						"packing": "Equipaje de mano",
+						"health": "Salud e Higiene"
+					},
+					"items": {
+						"passport": "Pasaporte y Visa",
+						"insurance": "Seguro de Viaje",
+						"currency": "Efectivo / Moneda",
+						"charger": "Adaptador de enchufe",
+						"meds": "Medicamentos básicos",
+						"ticket": "Boletos / Reservas impresas"
+					}
+				},
+				"moving": {
+					"title": "Mudanza de Casa",
+					"desc": "Organiza cajas, contratos y servicios",
+					"topics": {
+						"admin": "Administrativo",
+						"packing": "Embalaje",
+						"new_home": "Nueva Residencia"
+					},
+					"items": {
+						"address": "Cambiar dirección (Bancos/Susc.)",
+						"utilities": "Cortar luz/agua actual",
+						"boxes": "Comprar cajas y cintas",
+						"label": "Etiquetar caixas por habitación",
+						"cleaning": "Programar limpieza profesional",
+						"internet": "Instalar internet nuevo"
+					}
+				},
+				"wedding": {
+					"title": "Planificación de Boda",
+					"desc": "La cuenta regresiva para el gran día",
+					"topics": {
+						"legal": "Legal y Ceremonia",
+						"guests": "Invitados",
+						"vendors": "Proveedores"
+					},
+					"items": {
+						"registry": "Registro y Documentación",
+						"list": "Lista de invitados",
+						"save_date": "Enviar Save the Date",
+						"catering": "Degustación del Buffet",
+						"dress": "Prueba de vestido/traje",
+						"photo": "Contratar fotógrafo"
+					}
+				}
+			}
+		},
+		"details": {
+			"general_progress": "Progreso general",
+			"items_count": "{{completed}} de {{total}} elementos completados",
+			"add_topic": "Añadir tema",
+			"add_item": "Añadir elemento",
+			"edit_checklist": "Editar checklist",
+			"manage_topic": "Gestionar tema",
+			"manage_item": "Gestionar elemento"
+		}
+	}
 }

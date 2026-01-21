@@ -1,21 +1,122 @@
 {
-  "onboarding": {
-    "screens": [
-      {
-        "headline": "Organize life's important moments",
-        "description": "Keep track of everything that matters with smart, personalized checklists"
-      },
-      {
-        "headline": "Travel, moving, weddings and more",
-        "description": "Pre-built templates for all your life events, ready to customize"
-      },
-      {
-        "headline": "Smart checklists with AI support",
-        "description": "Get intelligent suggestions and never forget what's important"
-      }
-    ],
-    "skip": "Skip",
-    "next": "Next",
-    "getStarted": "Get started"
-  }
+	"common": {
+		"archive": "Archive",
+		"delete": "Delete",
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"actions": "Actions",
+		"are_you_sure": "Are you sure?",
+		"archive_confirm": "Do you want to archive this checklist?",
+		"delete_confirm": "This action cannot be undone. Do you want to delete permanently?"
+	},
+	"onboarding": {
+		"screens": [
+			{
+				"headline": "Organize life's important moments",
+				"description": "Keep track of everything that matters with smart, personalized checklists"
+			},
+			{
+				"headline": "Travel, moving, weddings and more",
+				"description": "Pre-built templates for all your life events, ready to customize"
+			},
+			{
+				"headline": "Smart checklists with AI support",
+				"description": "Get intelligent suggestions and never forget what's important"
+			}
+		],
+		"skip": "Skip",
+		"next": "Next",
+		"getStarted": "Get started"
+	},
+	"tabs": {
+		"home": "Home",
+		"reminders": "Reminders",
+		"history": "History",
+		"settings": "Settings"
+	},
+	"screens": {
+		"home": {
+			"header": { "new_checklist": "New Checklist" },
+			"welcome": "Welcome back! Let's get organized today.",
+			"empty": {
+				"title": "No active checklists",
+				"description": "Create your first checklist to start organizing your events",
+				"button": "Create checklist"
+			},
+			"create_sheet": {
+				"title": "New checklist",
+				"scratch": {
+					"title": "Create from scratch",
+					"subtitle": "Start with an empty checklist and customize it your way",
+					"name_placeholder": "Checklist name",
+					"description_placeholder": "Description (optional)",
+					"create_button": "Create Checklist"
+				},
+				"or_template": "Or choose a template",
+				"items_count": "{{count}} items"
+			},
+			"templates": {
+				"travel": {
+					"title": "International Travel",
+					"desc": "Documents, luggage, and essential prep",
+					"topics": {
+						"docs": "Documents & Finance",
+						"packing": "Carry-on Bag",
+						"health": "Health & Hygiene"
+					},
+					"items": {
+						"passport": "Passport & Visa",
+						"insurance": "Travel Insurance",
+						"currency": "Cash / Currency",
+						"charger": "Power Adapter",
+						"meds": "Basic Medications",
+						"ticket": "Printed Tickets / Bookings"
+					}
+				},
+				"moving": {
+					"title": "Home Moving",
+					"desc": "Organize boxes, contracts, and services",
+					"topics": {
+						"admin": "Administrative",
+						"packing": "Packing",
+						"new_home": "New Residence"
+					},
+					"items": {
+						"address": "Change Address (Banks/Subs)",
+						"utilities": "Cut off Electricity/Water",
+						"boxes": "Buy Boxes & Tapes",
+						"label": "Label Boxes by Room",
+						"cleaning": "Book Professional Cleaning",
+						"internet": "Install New Internet"
+					}
+				},
+				"wedding": {
+					"title": "Wedding Planning",
+					"desc": "The countdown to the big day",
+					"topics": {
+						"legal": "Legal & Ceremony",
+						"guests": "Guests",
+						"vendors": "Vendors"
+					},
+					"items": {
+						"registry": "Registry & Documents",
+						"list": "Guest List",
+						"save_date": "Send Save the Date",
+						"catering": "Buffet Tasting",
+						"dress": "Dress/Suit Fitting",
+						"photo": "Hire Photographer"
+					}
+				}
+			}
+		},
+		"details": {
+			"general_progress": "General Progress",
+			"items_count": "{{completed}} of {{total}} items completed",
+			"add_topic": "Add Topic",
+			"add_item": "Add item",
+			"edit_checklist": "Edit Checklist",
+			"manage_topic": "Manage Topic",
+			"manage_item": "Manage Item"
+		}
+	}
 }
