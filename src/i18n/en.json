@@ -7,7 +7,10 @@
 		"actions": "Actions",
 		"are_you_sure": "Are you sure?",
 		"archive_confirm": "Do you want to archive this checklist?",
-		"delete_confirm": "This action cannot be undone. Do you want to delete permanently?"
+		"delete_confirm": "This action cannot be undone. Do you want to delete permanently?",
+		"reminder": "Reminder",
+		"at": "at",
+		"edit": "Edit"
 	},
 	"onboarding": {
 		"screens": [

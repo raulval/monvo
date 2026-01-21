@@ -9,24 +9,24 @@
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		9714AF4ED5D2583007021A42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 610E90EF5114B7E92DFC2CB0 /* PrivacyInfo.xcprivacy */; };
+		A41A5F937D20E89F197EB783 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EA1CCE6F7C137B3CF11CB /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		BCB553910A5BD8439AC28683 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECEB23A2AAD4D4D41DD75 /* ExpoModulesProvider.swift */; };
-		EEFA2A9078FC66B350BFFE61 /* libPods-Monvo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDBD19947306BFD1D94F573 /* libPods-Monvo.a */; };
+		BC1ABAAC4F0473AEE35B4BF4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CB49C08D4383DFB64F5C2DA8 /* PrivacyInfo.xcprivacy */; };
+		D6684733FF8B1BD56DE106AC /* libPods-Monvo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26BB068FD472F79F42ADD0 /* libPods-Monvo.a */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D26BB068FD472F79F42ADD0 /* libPods-Monvo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Monvo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Monvo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monvo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Monvo/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Monvo/Info.plist; sourceTree = "<group>"; };
-		3FDBD19947306BFD1D94F573 /* libPods-Monvo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Monvo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		610E90EF5114B7E92DFC2CB0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Monvo/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		7AFECEB23A2AAD4D4D41DD75 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Monvo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		AA0EA1CCE6F7C137B3CF11CB /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Monvo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Monvo/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B75B0111CC80F520CFC9C74D /* Pods-Monvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monvo.release.xcconfig"; path = "Target Support Files/Pods-Monvo/Pods-Monvo.release.xcconfig"; sourceTree = "<group>"; };
+		AA99A6FFE119E8200835B6EE /* Pods-Monvo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monvo.release.xcconfig"; path = "Target Support Files/Pods-Monvo/Pods-Monvo.release.xcconfig"; sourceTree = "<group>"; };
+		B9A062B4D3A289CB27662F49 /* Pods-Monvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monvo.debug.xcconfig"; path = "Target Support Files/Pods-Monvo/Pods-Monvo.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		D84FA1CA2D598CE5AE4820D1 /* Pods-Monvo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monvo.debug.xcconfig"; path = "Target Support Files/Pods-Monvo/Pods-Monvo.debug.xcconfig"; sourceTree = "<group>"; };
+		CB49C08D4383DFB64F5C2DA8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Monvo/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Monvo/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* Monvo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Monvo-Bridging-Header.h"; path = "Monvo/Monvo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -37,13 +37,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEFA2A9078FC66B350BFFE61 /* libPods-Monvo.a in Frameworks */,
+				D6684733FF8B1BD56DE106AC /* libPods-Monvo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A87A7EB7B262C5A5E17706D /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				F91B2A4B0FBF8A12E792A534 /* Monvo */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* Monvo */ = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +61,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				610E90EF5114B7E92DFC2CB0 /* PrivacyInfo.xcprivacy */,
+				CB49C08D4383DFB64F5C2DA8 /* PrivacyInfo.xcprivacy */,
 			);
 			name = Monvo;
 			sourceTree = "<group>";
@@ -62,25 +70,19 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				3FDBD19947306BFD1D94F573 /* libPods-Monvo.a */,
+				0D26BB068FD472F79F42ADD0 /* libPods-Monvo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3132197C3F6B81551126E07C /* Monvo */ = {
+		75D0AC8531ED3FCADFF03B25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7AFECEB23A2AAD4D4D41DD75 /* ExpoModulesProvider.swift */,
+				B9A062B4D3A289CB27662F49 /* Pods-Monvo.debug.xcconfig */,
+				AA99A6FFE119E8200835B6EE /* Pods-Monvo.release.xcconfig */,
 			);
-			name = Monvo;
-			sourceTree = "<group>";
-		};
-		41D4DCEC545F19C81849BE35 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				3132197C3F6B81551126E07C /* Monvo */,
-			);
-			name = ExpoModulesProviders;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -97,8 +99,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				AD0A9089418E7C1A0C1CEC15 /* Pods */,
-				41D4DCEC545F19C81849BE35 /* ExpoModulesProviders */,
+				75D0AC8531ED3FCADFF03B25 /* Pods */,
+				0A87A7EB7B262C5A5E17706D /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -113,16 +115,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD0A9089418E7C1A0C1CEC15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D84FA1CA2D598CE5AE4820D1 /* Pods-Monvo.debug.xcconfig */,
-				B75B0111CC80F520CFC9C74D /* Pods-Monvo.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +122,14 @@
 			);
 			name = Supporting;
 			path = Monvo/Supporting;
+			sourceTree = "<group>";
+		};
+		F91B2A4B0FBF8A12E792A534 /* Monvo */ = {
+			isa = PBXGroup;
+			children = (
+				AA0EA1CCE6F7C137B3CF11CB /* ExpoModulesProvider.swift */,
+			);
+			name = Monvo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,13 +140,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Monvo" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				348BDC739CA6F8944718DD8A /* [Expo] Configure project */,
+				303AF6E4C26A686137200D29 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				6A3E6C829348D5DD127B60B3 /* [CP] Embed Pods Frameworks */,
+				2CD3CFCA24B6495BF3E55E21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				9714AF4ED5D2583007021A42 /* PrivacyInfo.xcprivacy in Resources */,
+				BC1ABAAC4F0473AEE35B4BF4 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +242,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		348BDC739CA6F8944718DD8A /* [Expo] Configure project */ = {
+		2CD3CFCA24B6495BF3E55E21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Monvo/Pods-Monvo-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monvo/Pods-Monvo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		303AF6E4C26A686137200D29 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -265,28 +287,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Monvo/expo-configure-project.sh\"\n";
-		};
-		6A3E6C829348D5DD127B60B3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monvo/Pods-Monvo-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monvo/Pods-Monvo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -326,7 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				BCB553910A5BD8439AC28683 /* ExpoModulesProvider.swift in Sources */,
+				A41A5F937D20E89F197EB783 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +335,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D84FA1CA2D598CE5AE4820D1 /* Pods-Monvo.debug.xcconfig */;
+			baseConfigurationReference = B9A062B4D3A289CB27662F49 /* Pods-Monvo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -371,7 +371,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B75B0111CC80F520CFC9C74D /* Pods-Monvo.release.xcconfig */;
+			baseConfigurationReference = AA99A6FFE119E8200835B6EE /* Pods-Monvo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

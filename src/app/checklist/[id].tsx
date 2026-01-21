@@ -91,6 +91,9 @@ export default function ChecklistDetailsScreen() {
 								setSelectedTopic(topic);
 								setManageTopicOpen(true);
 							}}
+							onDeleteTopic={() => {
+								manageTopic.mutate({ action: "DELETE", topic });
+							}}
 						/>
 					))}
 				</View>

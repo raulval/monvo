@@ -1,18 +1,10 @@
 import React, { useMemo, useRef, useEffect, useCallback, useState } from "react";
-import {
-	View,
-	Text,
-	Pressable,
-	ScrollView,
-	TextInput,
-	KeyboardAvoidingView,
-	Platform,
-	Dimensions,
-} from "react-native";
+import { View, Text, Pressable, ScrollView, Platform, Dimensions, Keyboard } from "react-native";
 import BottomSheet, {
-	BottomSheetView,
 	BottomSheetBackdrop,
 	BottomSheetTextInput,
+	BottomSheetScrollView,
+	BottomSheetFooter,
 } from "@gorhom/bottom-sheet";
 import { Plus, X, ArrowLeft, Check } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
@@ -30,12 +22,10 @@ interface Props {
 
 type Step = "SELECT" | "FORM";
 
-const SCREEN_HEIGHT = Dimensions.get("window").height;
-
 export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onSelectTemplate }: Props) {
 	const { t } = useTranslation();
 	const bottomSheetRef = useRef<BottomSheet>(null);
-	const snapPoints = useMemo(() => ["85%"], []);
+	const snapPoints = useMemo(() => ["85%", "95%"], []);
 
 	const [step, setStep] = useState<Step>("SELECT");
 	const [title, setTitle] = useState("");
@@ -52,6 +42,18 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 		}
 	}, [isOpen]);
 
+	useEffect(() => {
+		const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+			if (isOpen) {
+				bottomSheetRef.current?.snapToIndex(0);
+			}
+		});
+
+		return () => {
+			hideSubscription.remove();
+		};
+	}, [isOpen]);
+
 	const renderBackdrop = useCallback(
 		(props: any) => (
 			<BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} pressBehavior="close" />
@@ -59,11 +61,37 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 		[],
 	);
 
-	const handleCreateSubmit = () => {
+	const handleCreateSubmit = useCallback(() => {
 		if (!title.trim()) return;
 		onCreateEmpty(title, description);
 		onClose();
-	};
+	}, [title, description, onCreateEmpty, onClose]);
+
+	const renderFooter = useCallback(
+		(footerProps: any) => {
+			if (step !== "FORM") return null;
+
+			return (
+				<BottomSheetFooter {...footerProps} bottomInset={0}>
+					<View className="px-6 pb-10 bg-white">
+						<Pressable
+							disabled={!title.trim()}
+							onPress={handleCreateSubmit}
+							className={`flex-row items-center justify-center p-5 rounded-3xl shadow-sm ${
+								title.trim() ? "bg-purple-600 active:bg-purple-700" : "bg-gray-200"
+							}`}
+						>
+							<Text className="text-white font-bold text-lg mr-2">
+								{t("screens.home.create_sheet.scratch.create_button")}
+							</Text>
+							<Check size={20} color="#fff" />
+						</Pressable>
+					</View>
+				</BottomSheetFooter>
+			);
+		},
+		[step, title, handleCreateSubmit, t],
+	);
 
 	return (
 		<Portal>
@@ -75,10 +103,16 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 				index={-1}
 				backgroundStyle={{ borderRadius: 32 }}
 				backdropComponent={renderBackdrop}
+				footerComponent={renderFooter}
 				keyboardBehavior="extend"
 				keyboardBlurBehavior="restore"
+				android_keyboardInputMode="adjustResize"
 			>
-				<BottomSheetView className="flex-1 px-6">
+				<BottomSheetScrollView
+					className="flex-1 px-6"
+					contentContainerStyle={{ paddingBottom: step === "FORM" ? 120 : 40 }}
+					keyboardShouldPersistTaps="handled"
+				>
 					<AnimatePresence exitBeforeEnter>
 						{step === "SELECT" ? (
 							<MotiView
@@ -98,7 +132,7 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 									</Pressable>
 								</View>
 
-								<ScrollView showsVerticalScrollIndicator={false} className="flex-1">
+								<View className="flex-1">
 									{/* Create Empty Trigger */}
 									<Pressable
 										onPress={() => setStep("FORM")}
@@ -161,11 +195,11 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 											);
 										})}
 									</View>
-								</ScrollView>
+								</View>
 							</MotiView>
 						) : (
 							<MotiView
-								key="form"
+								key={isOpen && step === "FORM" ? "form-open" : "form-closed"}
 								from={{ opacity: 0, translateX: 20 }}
 								animate={{ opacity: 1, translateX: 0 }}
 								exit={{ opacity: 0, translateX: 20 }}
@@ -189,14 +223,14 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 									</Pressable>
 								</View>
 
-								<View className="flex-1 py-6 gap-6">
+								<View className="py-6 gap-6">
 									{/* Title Input */}
 									<View>
 										<Text className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1">
 											{t("screens.home.create_sheet.scratch.name_placeholder")}
 										</Text>
 										<BottomSheetTextInput
-											autoFocus
+											autoFocus={isOpen && step === "FORM"}
 											placeholder={t("screens.home.create_sheet.scratch.name_placeholder")}
 											value={title}
 											onChangeText={setTitle}
@@ -219,27 +253,11 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 											className="bg-gray-50 p-5 rounded-3xl text-base text-gray-600 border border-gray-100 h-32"
 										/>
 									</View>
-
-									{/* Submit Button */}
-									<View className="mt-auto pb-10">
-										<Pressable
-											disabled={!title.trim()}
-											onPress={handleCreateSubmit}
-											className={`flex-row items-center justify-center p-5 rounded-3xl shadow-sm ${
-												title.trim() ? "bg-purple-600 active:bg-purple-700" : "bg-gray-200"
-											}`}
-										>
-											<Text className="text-white font-bold text-lg mr-2">
-												{t("screens.home.create_sheet.scratch.create_button")}
-											</Text>
-											<Check size={20} color="#fff" />
-										</Pressable>
-									</View>
 								</View>
 							</MotiView>
 						)}
 					</AnimatePresence>
-				</BottomSheetView>
+				</BottomSheetScrollView>
 			</BottomSheet>
 		</Portal>
 	);

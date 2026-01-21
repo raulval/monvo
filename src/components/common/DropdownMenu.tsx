@@ -53,7 +53,7 @@ export function DropdownMenu({ visible, onClose, items, anchorPosition }: Dropdo
 											item.onPress();
 											onClose();
 										}}
-										className={`flex-row items-center px-5 py-4 active:bg-slate-50 border-b border-slate-50 last:border-b-0`}
+										className={`flex-row items-center px-5 py-4 active:bg-slate-50 border-b border-slate-50 last:border-b-0 gap-2`}
 									>
 										{Icon && <Icon size={18} color={isDanger ? "#ef4444" : "#64748b"} className="mr-3" />}
 										<Text
