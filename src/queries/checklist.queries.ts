@@ -164,6 +164,7 @@ export function useManageItemMutation() {
 		onSuccess: (_, { item }) => {
 			queryClient.invalidateQueries({ queryKey: checklistKeys.all });
 			queryClient.invalidateQueries({ queryKey: [...checklistKeys.all, "details", item.checklistId] });
+			queryClient.invalidateQueries({ queryKey: ["items", "reminders"] });
 		},
 	});
 }

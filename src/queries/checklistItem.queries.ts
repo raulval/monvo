@@ -5,6 +5,7 @@ import { checklistTopicRepository } from "@/repositories/checklistTopic.reposito
 
 export const itemKeys = {
 	byChecklist: (checklistId: string) => ["items", checklistId] as const,
+	reminders: ["items", "reminders"] as const,
 };
 
 export const topicKeys = {
@@ -15,6 +16,13 @@ export function useChecklistTopics(checklistId: string) {
 	return useQuery({
 		queryKey: topicKeys.byChecklist(checklistId),
 		queryFn: () => checklistTopicRepository.getByChecklist(checklistId),
+	});
+}
+
+export function useUpcomingReminders() {
+	return useQuery({
+		queryKey: itemKeys.reminders,
+		queryFn: () => checklistItemRepository.getUpcomingReminders(),
 	});
 }
 

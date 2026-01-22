@@ -9,7 +9,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { PortalProvider } from "@gorhom/portal";
 import { initializeDatabase } from "@/database/initialize";
 import { useState, useEffect, useCallback } from "react";
-import { SQLiteProvider } from "expo-sqlite";
+import { SQLiteProvider, SQLiteDatabase } from "expo-sqlite";
 import { queryClient } from "@/utils/queryClient";
 
 SplashScreen.preventAutoHideAsync();
@@ -17,7 +17,7 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
 	const [appIsReady, setAppIsReady] = useState(false);
 
-	const handleInitDB = useCallback(async (db: any) => {
+	const handleInitDB = useCallback(async (db: SQLiteDatabase) => {
 		try {
 			await initializeDatabase(db);
 			setAppIsReady(true);
@@ -37,7 +37,11 @@ export default function RootLayout() {
 			<GestureHandlerRootView>
 				<PortalProvider>
 					<SQLiteProvider databaseName="monvo.db" onInit={handleInitDB}>
-						<Stack screenOptions={{ headerShown: false }} />
+						<Stack screenOptions={{ headerShown: false }}>
+							<Stack.Screen name="(tabs)" />
+							<Stack.Screen name="onboarding" />
+							<Stack.Screen name="checklist/[id]" />
+						</Stack>
 					</SQLiteProvider>
 				</PortalProvider>
 			</GestureHandlerRootView>

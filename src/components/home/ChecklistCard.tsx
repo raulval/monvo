@@ -90,9 +90,7 @@ export function ChecklistCard({ checklist, onPress }: ChecklistCardProps) {
 					</Text>
 
 					{checklist.description && (
-						<Text className="text-sm text-white/70 font-medium uppercase tracking-wider">
-							{checklist.description}
-						</Text>
+						<Text className="text-sm text-white/70 font-medium tracking-wider">{checklist.description}</Text>
 					)}
 				</View>
 

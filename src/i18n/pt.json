@@ -120,6 +120,38 @@
 			"edit_checklist": "Editar Checklist",
 			"manage_topic": "Gerenciar Tópico",
 			"manage_item": "Gerenciar Item"
+		},
+		"reminders": {
+			"header": {
+				"title": "Lembretes",
+				"subtitle": "Mantenha-se no caminho certo com suas próximas tarefas"
+			},
+			"empty": {
+				"title": "Tudo sob controle",
+				"description": "Nenhum lembrete pendente no momento. Você está indo super bem.",
+				"footer": "Continue com o excelente trabalho! 🥳"
+			},
+			"stats": {
+				"title": "Seu progresso",
+				"subtitle": "das suas checklists concluídas"
+			},
+			"actions": {
+				"add": "Adicionar lembrete",
+				"create": "Criar nova checklist",
+				"mark_done": "Marcar como feito"
+			},
+			"sections": {
+				"overdue": "Expirado",
+				"today": "Hoje",
+				"tomorrow": "Amanhã",
+				"soon": "Em breve",
+				"later": "Mais tarde"
+			},
+			"badges": {
+				"upcoming": "Próximos",
+				"today": "Hoje",
+				"overdue": "Atrasado"
+			}
 		}
 	}
 }

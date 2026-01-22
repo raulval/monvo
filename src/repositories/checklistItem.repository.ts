@@ -11,16 +11,14 @@ export const checklistItemRepository = {
 		);
 	},
 
-	async getUpcomingReminders(): Promise<ChecklistItem[]> {
-		const now = Date.now();
-
-		return await db.getAllAsync<ChecklistItem>(
-			`SELECT * FROM checklist_items
-       WHERE dueAt IS NOT NULL
-         AND isDone = 0
-         AND dueAt >= ?
-       ORDER BY dueAt ASC`,
-			now,
+	async getUpcomingReminders(): Promise<(ChecklistItem & { checklistTitle: string })[]> {
+		return await db.getAllAsync<ChecklistItem & { checklistTitle: string }>(
+			`SELECT ci.*, c.title as checklistTitle 
+       FROM checklist_items ci
+       JOIN checklists c ON ci.checklistId = c.id
+       WHERE ci.dueAt IS NOT NULL
+         AND ci.isDone = 0
+       ORDER BY ci.dueAt ASC`,
 		);
 	},
 

@@ -120,6 +120,38 @@
 			"edit_checklist": "Editar checklist",
 			"manage_topic": "Gestionar tema",
 			"manage_item": "Gestionar elemento"
+		},
+		"reminders": {
+			"header": {
+				"title": "Recordatorios",
+				"subtitle": "Mantente al día con tus próximas tareas"
+			},
+			"empty": {
+				"title": "Todo bajo control",
+				"description": "No hay recordatorios pendientes por ahora. Lo estás haciendo genial.",
+				"footer": "¡Sigue con el excelente trabajo! 🥳"
+			},
+			"stats": {
+				"title": "Tu progreso",
+				"subtitle": "de tus checklists completadas"
+			},
+			"actions": {
+				"add": "Añadir recordatorio",
+				"create": "Nueva checklist",
+				"mark_done": "Completar"
+			},
+			"sections": {
+				"overdue": "Expirado",
+				"today": "Hoy",
+				"tomorrow": "Mañana",
+				"soon": "Próximamente",
+				"later": "Más tarde"
+			},
+			"badges": {
+				"upcoming": "Próximo",
+				"today": "Hoy",
+				"overdue": "Atrasado"
+			}
 		}
 	}
 }

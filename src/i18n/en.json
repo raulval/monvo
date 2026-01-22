@@ -120,6 +120,38 @@
 			"edit_checklist": "Edit Checklist",
 			"manage_topic": "Manage Topic",
 			"manage_item": "Manage Item"
+		},
+		"reminders": {
+			"header": {
+				"title": "Reminders",
+				"subtitle": "Stay on track with your upcoming tasks"
+			},
+			"empty": {
+				"title": "Everything under control",
+				"description": "No pending reminders at the moment. You're doing great.",
+				"footer": "Keep up the excellent work! 🥳"
+			},
+			"stats": {
+				"title": "Your progress",
+				"subtitle": "of your checklists completed"
+			},
+			"actions": {
+				"add": "Add reminder",
+				"create": "Create new checklist",
+				"mark_done": "Mark done"
+			},
+			"sections": {
+				"overdue": "Overdue",
+				"today": "Today",
+				"tomorrow": "Tomorrow",
+				"soon": "Soon",
+				"later": "Later"
+			},
+			"badges": {
+				"upcoming": "Upcoming",
+				"today": "Today",
+				"overdue": "Overdue"
+			}
 		}
 	}
 }

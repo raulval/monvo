@@ -1,43 +1,41 @@
 {
-  "expo": {
-    "name": "Monvo",
-    "scheme": "monvo",
-    "slug": "monvo",
-    "userInterfaceStyle": "automatic",
-    "orientation": "default",
-    "icon": "./src/assets/icon.png",
-    "web": {
-      "output": "static"
-    },
-    "splash": {
-      "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FDF4FF"
-    },
-    "android": {
-      "package": "com.monvo.app"
-    },
-    "ios": {
-      "bundleIdentifier": "com.monvo.app"
-    },
-    "plugins": [
-      [
-        "expo-sqlite",
-        {
-          "enableFTS": true,
-          "useSQLCipher": true,
-          "android": {
-            "enableFTS": false,
-            "useSQLCipher": false
-          },
-          "ios": {
-            "customBuildFlags": [
-              "-DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_SNAPSHOT=1"
-            ]
-          }
-        }
-      ],
-      "@react-native-community/datetimepicker"
-    ]
-  }
+	"expo": {
+		"name": "Monvo",
+		"scheme": "monvo",
+		"slug": "monvo",
+		"userInterfaceStyle": "automatic",
+		"orientation": "default",
+		"icon": "./src/assets/icon.png",
+		"web": {
+			"output": "static"
+		},
+		"splash": {
+			"image": "./src/assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#FDF4FF"
+		},
+		"android": {
+			"package": "com.monvo.app"
+		},
+		"ios": {
+			"bundleIdentifier": "com.monvo.app"
+		},
+		"plugins": [
+			[
+				"expo-sqlite",
+				{
+					"enableFTS": true,
+					"useSQLCipher": true,
+					"android": {
+						"enableFTS": false,
+						"useSQLCipher": false
+					},
+					"ios": {
+						"customBuildFlags": ["-DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_SNAPSHOT=1"]
+					}
+				}
+			],
+			"@react-native-community/datetimepicker"
+		]
+	}
 }
