@@ -33,7 +33,7 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 
 	useEffect(() => {
 		if (isOpen) {
-			bottomSheetRef.current?.expand();
+			bottomSheetRef.current?.snapToIndex(0);
 			setStep("SELECT");
 			setTitle("");
 			setDescription("");
@@ -230,7 +230,6 @@ export function CreateChecklistBottomSheet({ isOpen, onClose, onCreateEmpty, onS
 											{t("screens.home.create_sheet.scratch.name_placeholder")}
 										</Text>
 										<BottomSheetTextInput
-											autoFocus={isOpen && step === "FORM"}
 											placeholder={t("screens.home.create_sheet.scratch.name_placeholder")}
 											value={title}
 											onChangeText={setTitle}

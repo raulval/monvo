@@ -27,7 +27,7 @@ export function ManageChecklistBottomSheet({ isOpen, onClose, onSave, initialDat
 
 	useEffect(() => {
 		if (isOpen) {
-			bottomSheetRef.current?.expand();
+			bottomSheetRef.current?.snapToIndex(0);
 			setTitle(initialData?.title || "");
 			setDescription(initialData?.description || "");
 		} else {

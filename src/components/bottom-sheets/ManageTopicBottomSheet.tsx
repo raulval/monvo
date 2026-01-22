@@ -29,7 +29,7 @@ export function ManageTopicBottomSheet({ isOpen, onClose, onSave, onDelete, init
 
 	useEffect(() => {
 		if (isOpen) {
-			bottomSheetRef.current?.expand();
+			bottomSheetRef.current?.snapToIndex(0);
 			setTitle(initialTitle || "");
 		} else {
 			bottomSheetRef.current?.close();
@@ -134,7 +134,6 @@ export function ManageTopicBottomSheet({ isOpen, onClose, onSave, onDelete, init
 								{t("screens.home.create_sheet.scratch.name_placeholder")}
 							</Text>
 							<BottomSheetTextInput
-								autoFocus={isOpen}
 								placeholder={t("screens.home.create_sheet.scratch.name_placeholder")}
 								value={title}
 								onChangeText={setTitle}

@@ -34,7 +34,7 @@ export function ManageItemBottomSheet({ isOpen, onClose, onSave, onDelete, initi
 
 	useEffect(() => {
 		if (isOpen) {
-			bottomSheetRef.current?.expand();
+			bottomSheetRef.current?.snapToIndex(0);
 			setTitle(initialData?.title || "");
 			setHasReminder(!!initialData?.dueAt);
 			setDate(initialData?.dueAt ? new Date(initialData.dueAt) : new Date());
@@ -179,7 +179,6 @@ export function ManageItemBottomSheet({ isOpen, onClose, onSave, onDelete, initi
 								{t("screens.home.create_sheet.scratch.name_placeholder")}
 							</Text>
 							<BottomSheetTextInput
-								autoFocus={isOpen}
 								placeholder={t("screens.home.create_sheet.scratch.name_placeholder")}
 								value={title}
 								onChangeText={setTitle}
