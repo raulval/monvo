@@ -47,11 +47,19 @@ export const checklistItemRepository = {
 	},
 
 	async update(id: string, updates: Partial<ChecklistItem>) {
-		const keys = Object.keys(updates);
+		const validColumns = ["checklistId", "topicId", "title", "isDone", "dueAt", "notifiedAt", "createdAt"];
+		const filteredUpdates: any = {};
+		Object.keys(updates).forEach((key) => {
+			if (validColumns.includes(key)) {
+				filteredUpdates[key] = (updates as any)[key];
+			}
+		});
+
+		const keys = Object.keys(filteredUpdates);
 		if (keys.length === 0) return;
 
 		const setClause = keys.map((key) => `${key} = ?`).join(", ");
-		const values = [...Object.values(updates), id];
+		const values = [...Object.values(filteredUpdates), id];
 
 		await db.runAsync(`UPDATE checklist_items SET ${setClause} WHERE id = ?`, ...(values as any));
 	},

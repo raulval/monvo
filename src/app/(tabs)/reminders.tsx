@@ -193,9 +193,10 @@ export default function RemindersScreen() {
 				}}
 				initialData={selectedItem}
 				onSave={(data) => {
+					const { checklistTitle, ...cleanItem } = selectedItem;
 					manageItem.mutate({
 						action: "UPDATE",
-						item: { ...selectedItem, ...data, checklistId: selectedItem.checklistId },
+						item: { ...cleanItem, ...data },
 					});
 				}}
 				onDelete={() => manageItem.mutate({ action: "DELETE", item: selectedItem })}
