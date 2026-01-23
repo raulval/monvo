@@ -165,7 +165,7 @@ export default function ChecklistDetailsScreen() {
 								checklistId: id,
 								topicId: selectedTopic?.id,
 								title: data.title,
-								isDone: 0,
+								isDone: false,
 								dueAt: data.dueAt,
 								createdAt: Date.now(),
 							},

@@ -65,7 +65,7 @@ export default function RemindersScreen() {
 	const handleToggleDone = (item: ChecklistItemReminder) => {
 		manageItem.mutate({
 			action: "TOGGLE",
-			item: { id: item.id, isDone: !item.isDone, checklistId: item.checklistId },
+			item: { ...item, isDone: !item.isDone },
 		});
 	};
 

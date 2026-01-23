@@ -31,6 +31,7 @@ export type ChecklistTopic = {
 	title: string;
 	order: number;
 	createdAt: number;
+	items?: ChecklistItem[];
 };
 
 export type ChecklistItemReminder = ChecklistItem & {

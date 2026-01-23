@@ -5,6 +5,7 @@ import { checklistItemRepository } from "@/repositories/checklistItem.repository
 import { CHECKLIST_TEMPLATES } from "@/constants/checklistTemplates";
 import { generateUUID } from "@/utils/helpers/uuid";
 import i18next from "i18next";
+import { Checklist, ChecklistTopic } from "@/types/checklist";
 
 export const checklistKeys = {
 	all: ["checklists"] as const,
@@ -13,7 +14,7 @@ export const checklistKeys = {
 export function useChecklists() {
 	return useQuery({
 		queryKey: checklistKeys.all,
-		queryFn: () => checklistRepository.getActiveWithProgress(), // Sua query SQL com contagem de itens
+		queryFn: () => checklistRepository.getActiveWithProgress(),
 	});
 }
 
@@ -120,7 +121,7 @@ export function useChecklistDetails(id: string) {
 export function useUpdateChecklistMutation() {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationFn: async ({ id, updates }: { id: string; updates: any }) => {
+		mutationFn: async ({ id, updates }: { id: string; updates: Partial<Checklist> }) => {
 			await checklistRepository.update(id, updates);
 		},
 		onSuccess: (_, { id }) => {
@@ -133,7 +134,13 @@ export function useUpdateChecklistMutation() {
 export function useManageTopicMutation() {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationFn: async ({ action, topic }: { action: "CREATE" | "UPDATE" | "DELETE"; topic: any }) => {
+		mutationFn: async ({
+			action,
+			topic,
+		}: {
+			action: "CREATE" | "UPDATE" | "DELETE";
+			topic: ChecklistTopic;
+		}) => {
 			if (action === "CREATE") await checklistTopicRepository.insert(topic);
 			if (action === "UPDATE") await checklistTopicRepository.update(topic.id, topic.title);
 			if (action === "DELETE") await checklistTopicRepository.remove(topic.id);
