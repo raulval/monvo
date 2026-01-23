@@ -1,5 +1,5 @@
 import { db } from "@/database";
-import { ChecklistItem } from "@/types/checklist";
+import { ChecklistItem, ChecklistItemReminder } from "@/types/checklist";
 
 export const checklistItemRepository = {
 	async getByChecklist(checklistId: string): Promise<ChecklistItem[]> {
@@ -11,8 +11,8 @@ export const checklistItemRepository = {
 		);
 	},
 
-	async getUpcomingReminders(): Promise<(ChecklistItem & { checklistTitle: string })[]> {
-		return await db.getAllAsync<ChecklistItem & { checklistTitle: string }>(
+	async getUpcomingReminders(): Promise<ChecklistItemReminder[]> {
+		return await db.getAllAsync<ChecklistItemReminder>(
 			`SELECT ci.*, c.title as checklistTitle 
        FROM checklist_items ci
        JOIN checklists c ON ci.checklistId = c.id

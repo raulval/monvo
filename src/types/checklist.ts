@@ -32,3 +32,8 @@ export type ChecklistTopic = {
 	order: number;
 	createdAt: number;
 };
+
+export type ChecklistItemReminder = ChecklistItem & {
+	checklistTitle: string;
+	dueAt: number;
+};

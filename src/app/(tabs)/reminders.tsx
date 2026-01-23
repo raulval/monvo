@@ -3,7 +3,7 @@ import { View, Text, ScrollView, RefreshControl, Pressable, StyleSheet } from "r
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
-import { format, isToday, isTomorrow, startOfDay, addDays } from "date-fns";
+import { isToday, isTomorrow, addDays, endOfDay } from "date-fns";
 import { Bell } from "lucide-react-native";
 import Animated, { useSharedValue, useAnimatedScrollHandler } from "react-native-reanimated";
 
@@ -13,6 +13,7 @@ import { ReminderCard } from "@/components/reminders/ReminderCard";
 import { RemindersEmptyState } from "@/components/reminders/RemindersEmptyState";
 import { RemindersHeader } from "@/components/reminders/RemindersHeader";
 import { ManageItemBottomSheet } from "@/components/bottom-sheets/ManageItemBottomSheet";
+import { ChecklistItemReminder } from "@/types/checklist";
 
 export default function RemindersScreen() {
 	const { t } = useTranslation();
@@ -39,10 +40,13 @@ export default function RemindersScreen() {
 		};
 
 		const now = Date.now();
-		const todayStart = startOfDay(new Date());
 
-		reminders.forEach((item: any) => {
+		reminders.forEach((item: ChecklistItemReminder) => {
+			if (!item.dueAt) return;
 			const date = new Date(item.dueAt);
+
+			const oneWeekFromNow = addDays(now, 7).getTime();
+			const endOfTomorrow = endOfDay(addDays(now, 1)).getTime();
 
 			if (item.dueAt < now && !isToday(date)) {
 				groups.expired.push(item);
@@ -50,7 +54,7 @@ export default function RemindersScreen() {
 				groups.today.push(item);
 			} else if (isTomorrow(date)) {
 				groups.tomorrow.push(item);
-			} else {
+			} else if (item.dueAt > endOfTomorrow && item.dueAt <= oneWeekFromNow) {
 				groups.later.push(item);
 			}
 		});
@@ -58,14 +62,14 @@ export default function RemindersScreen() {
 		return groups;
 	}, [reminders]);
 
-	const handleToggleDone = (item: any) => {
+	const handleToggleDone = (item: ChecklistItemReminder) => {
 		manageItem.mutate({
 			action: "TOGGLE",
 			item: { id: item.id, isDone: !item.isDone, checklistId: item.checklistId },
 		});
 	};
 
-	const handleEditTime = (item: any) => {
+	const handleEditTime = (item: ChecklistItemReminder) => {
 		setSelectedItem(item);
 		setIsEditOpen(true);
 	};
@@ -118,7 +122,7 @@ export default function RemindersScreen() {
 							<>
 								{renderSectionHeader(t("screens.reminders.sections.overdue"), "overdue")}
 								<View className="px-5">
-									{groupedReminders.expired.map((item) => (
+									{groupedReminders.expired.map((item: ChecklistItemReminder) => (
 										<ReminderCard
 											key={item.id}
 											{...item}
@@ -135,7 +139,7 @@ export default function RemindersScreen() {
 							<>
 								{renderSectionHeader(t("screens.reminders.sections.today"), "today")}
 								<View className="px-5">
-									{groupedReminders.today.map((item) => (
+									{groupedReminders.today.map((item: ChecklistItemReminder) => (
 										<ReminderCard
 											key={item.id}
 											{...item}
@@ -152,7 +156,7 @@ export default function RemindersScreen() {
 							<>
 								{renderSectionHeader(t("screens.reminders.sections.tomorrow"), "tomorrow")}
 								<View className="px-5">
-									{groupedReminders.tomorrow.map((item) => (
+									{groupedReminders.tomorrow.map((item: ChecklistItemReminder) => (
 										<ReminderCard
 											key={item.id}
 											{...item}
@@ -169,7 +173,7 @@ export default function RemindersScreen() {
 							<>
 								{renderSectionHeader(t("screens.reminders.sections.later"), "later")}
 								<View className="px-5">
-									{groupedReminders.later.map((item) => (
+									{groupedReminders.later.map((item: ChecklistItemReminder) => (
 										<ReminderCard
 											key={item.id}
 											{...item}
